@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <nav class="navbar navbar-light bg-primary justify-content-between">
+      <div class="container">
+        <a href="/" class="navbar-brand text-light">Silly Login</a>
+        <ul class="nav navbar-nav flex-row float-right">
+          {% if session['user_id'] %}
+          <li class="nav-item">
+            <a class="nav-link pr-3 text-light" href="/logout">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link pr-3 text-light" href="/login">Login/</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/register">/Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </head>
+  <body>
+    <h1>
+      Worlds most intricate and dynamic globally engineered web based user
+      authentication and registration application
+    </h1>
+  </body>
+</html>

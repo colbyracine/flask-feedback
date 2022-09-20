@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Welcome, {{user.first_name}} {{user.last_name}}</h1>
+<h3>Review Your Info Below</h3>
+<ul>
+  <li>Username: {{user.username}}</li>
+  <li>Email: {{user.email}}</li>
+  <li>First Name: {{user.first_name}}</li>
+  <li>Last Name: {{user.last_name}}</li>
+</ul>
+<a text-light href="/users/{{user.username}}/feedback/add">Add Feedback</a>
+<br />
+<a text-light href="/users/{{user.username}}/delete"
+  >PERMINATELY DELETE ACCOUNT</a
+>
+<br />
+<br />
+<h3>{{user.username}}'s feedback</h3>
+{% for feedback in user.feedback %}
+<ul>
+  <form>
+    <h2>Title: {{feedback.title}}</h2>
+    <p>{{feedback.content}}</p>
+    <button
+      class="btn btn-primary"
+      formmethod="GET"
+      formaction="/feedback/{{ feedback.id }}/update"
+    >
+      Edit
+    </button>
+    <button
+      class="btn btn-danger"
+      formmethod="POST"
+      formaction="/feedback/{{ feedback.id }}/delete"
+    >
+      Delete
+    </button>
+  </form>
+</ul>
+
+{%endfor%} {%endblock%}

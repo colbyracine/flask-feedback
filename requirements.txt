@@ -1,0 +1,8 @@
+Flask==2.2.2
+flask_bcrypt==1.0.1
+flask_debugtoolbar==0.13.1
+flask_sqlalchemy==2.5.1
+flask_wtf==1.0.1
+SQLAlchemy==1.4.41
+Werkzeug==2.2.2
+WTForms==3.0.1
